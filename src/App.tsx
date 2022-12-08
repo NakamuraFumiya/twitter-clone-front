@@ -1,13 +1,34 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <div className="App">
+        <h1>Twitter</h1>
+      </div>
+    ),
+  },
+  {
+    path: "about",
+    element: (
+      <div className="App">
+        <h1>About</h1>
+      </div>
+    ),
+  },
+]);
 
 function App() {
   return (
     <>
-      <div className="App">
-        <h1>Twitter</h1>
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 }
