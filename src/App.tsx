@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         <div className="App">
           <h1>Twitter</h1>
         </div>
-        <Posts></Posts>
+        <Posts />
       </>
     ),
   },
