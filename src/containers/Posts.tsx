@@ -3,11 +3,11 @@ import { useState } from "react";
 import { fetchPosts } from "../apis/posts";
 
 type Post = {
-  id: number;
-  message: string;
-  to: string;
-  from: string;
-  created_at: Date;
+  ID: number;
+  Message: string;
+  To: string;
+  From: string;
+  CreatedAt: Date;
 };
 
 export const Posts = () => {
@@ -21,10 +21,17 @@ export const Posts = () => {
 
   return (
     <>
-      Test
-      {posts.map((item) => (
+      <h2>投稿一覧</h2>
+      {posts.map((post) => (
         <div>
-          <p>{item.id}</p>
+          <br />
+          <div>
+            <p>ID: {post.ID}</p>
+            <p>メッセージ: {post.Message}</p>
+            <p>To: {post.To ? post.To : "なし"}</p>
+            <p>From: {post.From ? post.From : "なし"}</p>
+          </div>
+          <br />
         </div>
       ))}
     </>
