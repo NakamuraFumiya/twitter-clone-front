@@ -5,7 +5,7 @@ export const fetchPosts = () => {
   return axios
     .get(postIndex)
     .then((res) => {
-      console.log(res.data);
+      return res.data;
     })
     .catch((e) => console.error(e));
 };
