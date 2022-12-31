@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { fetchPosts } from "../apis/posts";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 type Post = {
   ID: number;
@@ -17,6 +18,10 @@ const HeaderWrapper = styled.h2`
   top: 0;
 `;
 
+const Post = styled.div`
+  text-align: center;
+`;
+
 export const Posts = () => {
   const [posts, setPosts] = useState<Post[]>([]);
 
@@ -29,8 +34,8 @@ export const Posts = () => {
   return (
     <>
       <HeaderWrapper>投稿一覧</HeaderWrapper>
-      {posts.map((post) => (
-        <div>
+      {posts.map((post, index) => (
+        <Post key={index}>
           <br />
           <div>
             <p>ID: {post.ID}</p>
@@ -39,7 +44,7 @@ export const Posts = () => {
             <p>From: {post.From ? post.From : "なし"}</p>
           </div>
           <br />
-        </div>
+        </Post>
       ))}
     </>
   );
