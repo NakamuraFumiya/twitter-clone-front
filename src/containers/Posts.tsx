@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { fetchPosts } from "../apis/posts";
+import styled from "styled-components";
 
 type Post = {
   ID: number;
@@ -9,6 +10,12 @@ type Post = {
   From: string;
   CreatedAt: Date;
 };
+
+const HeaderWrapper = styled.h2`
+  text-align: center;
+  position: sticky;
+  top: 0;
+`;
 
 export const Posts = () => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -21,7 +28,7 @@ export const Posts = () => {
 
   return (
     <>
-      <h2>投稿一覧</h2>
+      <HeaderWrapper>投稿一覧</HeaderWrapper>
       {posts.map((post) => (
         <div>
           <br />
