@@ -2,11 +2,10 @@ import axios from "axios";
 import { postIndex } from "../urls";
 
 export const createPost = (message: any) => {
-  console.log(message);
+  const data = new FormData();
+  data.append("message", message);
   return axios
-    .post(postIndex, {
-      message: message,
-    })
+    .post(postIndex, data)
     .then((res) => {
       console.log(res);
     })
