@@ -6,6 +6,7 @@ import {
   Link,
 } from "react-router-dom";
 import { Posts } from "./containers/Posts";
+import { PostDetail } from "./containers/PostDetail";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +21,14 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "about",
+    path: "post_detail",
     element: (
-      <div className="App">
-        <h1>About</h1>
-      </div>
+      <>
+        <div className="App">
+          <h1>Twitter</h1>
+        </div>
+        <PostDetail postId={1} />
+      </>
     ),
   },
 ]);

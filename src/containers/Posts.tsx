@@ -35,16 +35,18 @@ export const Posts = () => {
     <>
       <HeaderWrapper>投稿一覧</HeaderWrapper>
       {posts.map((post, index) => (
-        <Post key={index}>
-          <br />
-          <div>
-            <p>ID: {post.ID}</p>
-            <p>メッセージ: {post.Message}</p>
-            <p>To: {post.To ? post.To : "なし"}</p>
-            <p>From: {post.From ? post.From : "なし"}</p>
-          </div>
-          <br />
-        </Post>
+        <Link to="post_detail?" key={index}>
+          <Post>
+            <br />
+            <div>
+              <p>ID: {post.ID}</p>
+              <p>メッセージ: {post.Message}</p>
+              <p>To: {post.To ? post.To : "なし"}</p>
+              <p>From: {post.From ? post.From : "なし"}</p>
+            </div>
+            <br />
+          </Post>
+        </Link>
       ))}
     </>
   );
