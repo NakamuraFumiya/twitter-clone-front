@@ -1,10 +1,5 @@
 import "./App.css";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Posts } from "./containers/Posts";
 import { PostDetail } from "./containers/PostDetail";
 
