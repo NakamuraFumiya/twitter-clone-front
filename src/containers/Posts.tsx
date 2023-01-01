@@ -35,7 +35,7 @@ export const Posts = () => {
     <>
       <HeaderWrapper>投稿一覧</HeaderWrapper>
       {posts.map((post, index) => (
-        <Link to="post_detail?" key={index}>
+        <Link to={`post_detail/${post.ID}`} key={index}>
           <Post>
             <br />
             <div>

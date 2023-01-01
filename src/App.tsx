@@ -21,13 +21,13 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "post_detail",
+    path: "post_detail/:id",
     element: (
       <>
         <div className="App">
           <h1>Twitter</h1>
         </div>
-        <PostDetail postId={1} />
+        <PostDetail />
       </>
     ),
   },

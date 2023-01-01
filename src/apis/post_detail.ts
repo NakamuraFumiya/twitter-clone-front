@@ -1,7 +1,7 @@
 import axios from "axios";
 import { postIndex } from "../urls";
 
-export const fetchPostDetail = (postId: number) => {
+export const fetchPostDetail = (postId: string) => {
   return axios
     .get(`${postIndex}/${postId}`)
     .then((res) => {

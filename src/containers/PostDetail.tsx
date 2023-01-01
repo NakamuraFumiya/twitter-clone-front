@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { fetchPostDetail } from "../apis/post_detail";
 import styled from "styled-components";
+import { useParams } from "react-router-dom";
 
 type Post = {
   ID: number;
@@ -21,11 +22,12 @@ const Post = styled.div`
   text-align: center;
 `;
 
-export const PostDetail = (props: any) => {
+export const PostDetail = () => {
+  let id: string = `${useParams().id}`;
   const [post, setPost] = useState<Post>();
 
   useEffect(() => {
-    fetchPostDetail(props.postId).then((data) => {
+    fetchPostDetail(id).then((data) => {
       setPost(data);
     });
   }, []);
