@@ -3,6 +3,7 @@ import { useState } from "react";
 import { fetchPostDetail } from "../apis/post_detail";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 type Post = {
   ID: number;
@@ -18,7 +19,7 @@ const HeaderWrapper = styled.h2`
   top: 0;
 `;
 
-const Post = styled.div`
+const Center = styled.div`
   text-align: center;
 `;
 
@@ -36,7 +37,7 @@ export const PostDetail = () => {
     <>
       <HeaderWrapper>投稿詳細</HeaderWrapper>
       {post && (
-        <Post key={post.ID}>
+        <Center key={post.ID}>
           <br />
           <div>
             <p>ID: {post.ID}</p>
@@ -45,8 +46,13 @@ export const PostDetail = () => {
             <p>From: {post.From ? post.From : "なし"}</p>
           </div>
           <br />
-        </Post>
+        </Center>
       )}
+      <Center>
+        <Link to="/">
+          <button>TOPに移動する</button>
+        </Link>
+      </Center>
     </>
   );
 };
